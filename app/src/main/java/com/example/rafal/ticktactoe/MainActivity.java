@@ -1,9 +1,11 @@
 package com.example.rafal.ticktactoe;
 
 import android.graphics.Color;
+import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
+import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -37,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
         mButtons = new Button[TickTacToeGame.getBoardSize()];
 
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int x = size.x / 3;
+
         TableLayout gameBoard = (TableLayout) findViewById(R.id.gameBoard);
         int counter = 0;
         for(int i = 0; i < 3; i++) {
@@ -47,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 b.setText("" + counter);
                 b.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 75);
 
-                TableRow.LayoutParams params = new TableRow.LayoutParams(200, 200);
+                TableRow.LayoutParams params = new TableRow.LayoutParams(x, x);
                 b.setLayoutParams(params);
 
                 mButtons[counter] = b;
