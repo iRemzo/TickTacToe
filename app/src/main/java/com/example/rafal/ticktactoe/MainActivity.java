@@ -1,15 +1,16 @@
 package com.example.rafal.ticktactoe;
 
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,15 +36,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mButtons = new Button[TickTacToeGame.getBoardSize()];
-        mButtons[0] = (Button) findViewById(R.id.one);
-        mButtons[1] = (Button) findViewById(R.id.two);
-        mButtons[2] = (Button) findViewById(R.id.three);
-        mButtons[3] = (Button) findViewById(R.id.four);
-        mButtons[4] = (Button) findViewById(R.id.five);
-        mButtons[5] = (Button) findViewById(R.id.six);
-        mButtons[6] = (Button) findViewById(R.id.seven);
-        mButtons[7] = (Button) findViewById(R.id.eight);
-        mButtons[8] = (Button) findViewById(R.id.nine);
+
+        TableLayout gameBoard = (TableLayout) findViewById(R.id.gameBoard);
+        int counter = 0;
+        for(int i = 0; i < 3; i++) {
+            TableRow row = new TableRow(this);
+
+            for(int j = 0; j < 3; j++) {
+                Button b = new Button(this);
+                b.setText("" + counter);
+                b.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 75);
+
+                TableRow.LayoutParams params = new TableRow.LayoutParams(200, 200);
+                b.setLayoutParams(params);
+
+                mButtons[counter] = b;
+                row.addView(mButtons[counter]);
+                counter++;
+            }
+            gameBoard.addView(row);
+        }
 
         tvInfo = (TextView) findViewById(R.id.information);
         tvHumanCount = (TextView) findViewById(R.id.humanCount);

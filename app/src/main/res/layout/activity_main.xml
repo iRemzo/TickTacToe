@@ -8,103 +8,10 @@
 
     <TableLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/gameBoard">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/one"
-                android:id="@+id/one"
-                android:height="120dp"
-                android:width="120dp"
-                android:textSize="75dp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/two"
-                android:id="@+id/two"
-                android:height="120dp"
-                android:width="120dp"
-                android:textSize="75dp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/three"
-                android:id="@+id/three"
-                android:height="120dp"
-                android:width="120dp"
-                android:textSize="75dp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/four"
-                android:id="@+id/four"
-                android:width="120dp"
-                android:height="120dp"
-                android:textSize="75dp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/five"
-                android:id="@+id/five"
-                android:width="120dp"
-                android:height="120dp"
-                android:textSize="75dp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/six"
-                android:id="@+id/six"
-                android:width="120dp"
-                android:height="120dp"
-                android:textSize="75dp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/seven"
-                android:id="@+id/seven"
-                android:width="120dp"
-                android:height="120dp"
-                android:textSize="75dp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/eight"
-                android:id="@+id/eight"
-                android:width="120dp"
-                android:height="120dp"
-                android:textSize="75dp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nine"
-                android:id="@+id/nine"
-                android:width="120dp"
-                android:height="120dp"
-                android:textSize="75dp" />
-        </TableRow>
     </TableLayout>
 
     <TextView
